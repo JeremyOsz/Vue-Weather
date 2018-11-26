@@ -3,7 +3,8 @@
     <div id="app">
       <h1>Weather App</h1>
       <p v-html="msg"></p>
-      <today></today>
+      <input type="text" id='city'></div>
+      <today v-bind:query="query"></today>
     </div>
     <!-- <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
@@ -26,11 +27,13 @@
 
 <script>
 import today from './components/Today.vue'
+
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'The weather today is: '
+      msg: 'The weather today is: ',
+      query: "Melbourne"
     }
   },
   components: {
